@@ -1,0 +1,43 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ff78ccf2">
+            <TextView
+                android:id="@+id/back"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:text="返回"/>
+            <View
+                android:layout_width="1sp"
+                android:layout_height="1sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/select_all"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:text="全选" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:layout_below="@+id/title">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</layout>

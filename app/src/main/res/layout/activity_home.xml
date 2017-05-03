@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="show"
+            type="com.lqh.asuzx.lwtxcs.activity.HomeActivity.ShowImages" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btn_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{show.image}"
+            android:text="获取系统图片" />
+
+        <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:onClick="@{show.camera}"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{show.order}"
+            android:layout_marginTop="20sp"
+            android:text="获取非系统应用" />
+        <GridView
+            android:id="@+id/selected_images_gridv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="20dp"
+            android:numColumns="3"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            ></GridView>
+    </LinearLayout>
+</layout>

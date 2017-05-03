@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="data"
+            type="com.lqh.asuzx.lwtxcs.tools.AppInfo"/>
+        <variable
+            name="apktools"
+            type="com.lqh.asuzx.lwtxcs.tools.ApkTools"
+            />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:background="@{data.appIcon}" />
+
+
+            <LinearLayout
+                android:paddingLeft="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:maxEms="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.appName}" />
+
+                <TextView
+                    android:layout_marginTop="5sp"
+                    android:maxEms="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.packageName}" />
+
+                <TextView
+                    android:layout_marginTop="5sp"
+                    android:maxEms="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sss" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1sp"
+                android:layout_height="1sp"
+                android:layout_weight="1">
+
+            </View>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <Button
+                    android:onClick="@{()->apktools.moveapk(data.appPath)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提取" />
+
+                <Button
+                    android:layout_marginTop="10sp"
+                    android:onClick="@{()->apktools.unapk(data.packageName)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卸载" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
