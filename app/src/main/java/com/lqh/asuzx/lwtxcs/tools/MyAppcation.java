@@ -3,7 +3,7 @@ package com.lqh.asuzx.lwtxcs.tools;
 import android.app.Application;
 import android.content.Context;
 
-import com.lqh.asuzx.lwtxcs.ui.CrashHandler;
+import com.lqh.asuzx.lwtxcs.utils.CrashHandler;
 
 /**
  * Created by lqh on 2017/4/26 0026.

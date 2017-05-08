@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Environment;
 import android.widget.Toast;
 
+import com.lqh.asuzx.lwtxcs.activity.FileManagerActivity;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,8 +18,8 @@ import java.io.FileOutputStream;
 
 public class ApkTools {
     private static Activity activity;
-    private String PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
-
+    private static String PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    private static String apkPath;
     public ApkTools() {
     }
 
@@ -31,9 +33,13 @@ public class ApkTools {
 //        intent.setType("*/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
 //        intent.addCategory(Intent.CATEGORY_OPENABLE);
 //        this.activity.startActivityForResult(intent, 1);
-        copyFile(apkPath,PATH);
-    }
+        //移动根目录
+//        copyFile(apkPath,PATH);
 
+        this.apkPath = apkPath;
+        Intent intent = new Intent(activity, FileManagerActivity.class);
+        activity.startActivityForResult(intent, 3);
+    }
     public void unapk(String packageName) {
 //        Toast.makeText(MyAppcation.getContextObject(), "卸载apk"+packageName, Toast.LENGTH_SHORT).show();
         Uri packageURI = Uri.parse("package:" + packageName);
@@ -41,7 +47,8 @@ public class ApkTools {
         this.activity.startActivityForResult(uninstallIntent,0);
     }
 
-    private void copyFile(String oldPath, String newPath) {
+    public static void copyFile(String oldPath, String newPath) {
+        oldPath = apkPath;
         try {
             (new File(newPath)).mkdirs(); //如果文件夹不存在 则建立新文件夹
             File temp = new File(oldPath);
@@ -57,11 +64,11 @@ public class ApkTools {
                 output.flush();
                 output.close();
                 input.close();
-                Toast.makeText(activity, "复制文件成功\n路径:"+PATH, Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "提取apk成功\n路径:"+apkPath, Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {
-            Toast.makeText(activity, "复制文件操作出错", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "提取apk失败", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
 
         }

@@ -14,7 +14,8 @@ import java.util.List;
 
 /**
  * Created by lqh on 2017/4/26 0026.
- * 拍照的返回类
+ * 拍照的适配器
+ * 与选择图片分开。
  */
 
 public class CameraAdapter extends BaseAdapter {

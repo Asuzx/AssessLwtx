@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 /**
  * Created by lqh on 2017/4/26 0026.
- * 自定义imageview 处理oom异常
+ * 自定义imageview 处理oom异常  效果不佳弃用中。
  */
 public class MyImageView extends ImageView {
 	private OnMeasureListener onMeasureListener;

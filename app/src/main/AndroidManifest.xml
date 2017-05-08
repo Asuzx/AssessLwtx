@@ -3,6 +3,7 @@
     package="com.lqh.asuzx.lwtxcs">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
     <application
         android:name="com.lqh.asuzx.lwtxcs.tools.MyAppcation"
         android:allowBackup="true"
@@ -16,13 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ShowPicActivity"/>
-        <activity android:name=".activity.OrderActivity"/>
+        <!-- 选择系统图片 -->
         <activity
             android:name=".activity.AlbumItemActivity"
             android:label="@string/app_name"
-            >
-        </activity>
+            />
+        <!-- 系统应用 -->
+        <activity android:name=".activity.OrderActivity"/>
+        <!-- apk提取 文件管理器 -->
+        <activity android:name=".activity.FileManagerActivity"/>
+        <!-- 卸载广播监听 -->
+        <receiver android:name=".Receiver.MyReceiver">
+            <intent-filter>
+                <!-- 一个已存在的应用程序包已经从设备上移除，包括包名（卸载监听所在的app，则无法接收到） -->
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="focus_color">#7f33b5e5</color>
-    <color name="transparent">#00000000</color>
+    <color name="transparent">#00000000</color> <!-- 透明 -->
     <color name="block">#000000</color>
+    <color name="vifrification">#00000000</color>   <!-- 透明 -->
+    <color name="lgray">#FF929292</color>
 </resources>

@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by lqh on 2017/4/26 0026.
+ * 应用管理器适配器
  */
 
 public class OrderAdapter extends BaseAdapter {
